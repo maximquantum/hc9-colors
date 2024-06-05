@@ -13,7 +13,10 @@ public class TransparentColor extends Color {
 
 	@Override
 	public boolean equals(Object obj) {
-		return super.equals(obj) && obj instanceof TransparentColor t && transparency == t.transparency; 
+		if (!super.equals(obj))
+			return false;
+		TransparentColor t = (TransparentColor)this;
+		return transparency == t.transparency; 
 	}
 
 	@Override

@@ -18,7 +18,12 @@ public class Color {
 
 	@Override
 	public boolean equals(Object obj) {
-		return obj instanceof Color c && red == c.red && green == c.green && blue == c.blue;
+		if (getClass() != obj.getClass())
+			return false;
+		Color c = (Color)obj;
+		return red == c.red && 
+				green == c.green && 
+				blue == c.blue;
 	}
 
 	@Override
